@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma Fournier | Portafolio Personal</title>
+    <style>
+        :root {
+            /* Paleta de tonos rosas */
+            --primary: #db2777;          /* Rosa vibrante para botones y destacados */
+            --primary-hover: #be185d;    /* Rosa oscuro para pasar el ratón */
+            --bg: #fdf2f8;               /* Fondo general (rosa pastel ultra claro) */
+            --card-bg: #ffffff;          /* Fondo de tarjetas (blanco puro) */
+            --header-bg: #831843;        /* Encabezado (rosa borgoña / vino) */
+            --text: #374151;             /* Texto principal (gris oscuro) */
+            --text-muted: #9d174d;       /* Texto secundario (rosa medio) */
+            --tag-bg: #fce7f3;           /* Fondo de etiquetas (rosa claro) */
+            --tag-text: #9d174d;         /* Texto de etiquetas */
+            --border-color: #fbcfe8;     /* Bordes y separadores (rosa suave) */
+        }
+
+        body { 
+            font-family: 'Segoe UI', system-ui, sans-serif; 
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 0; 
+            background: var(--bg); 
+            color: var(--text); 
+        }
+        
+        /* Hero Section / Encabezado */
+        header { 
+            background: var(--header-bg); 
+            color: white; 
+            padding: 4rem 1rem 3rem 1rem; 
+            text-align: center; 
+        }
+        header h1 { 
+            margin: 0 0 0.5rem 0; 
+            font-size: 2.5rem; 
+            color: #fbcfe8; /* Rosa muy claro */
+        }
+        header p.subtitle { 
+            color: #f472b6; 
+            font-size: 1.2rem; 
+            margin-top: 0; 
+        }
+        .social-links { margin-top: 1rem; }
+        .social-links a { 
+            color: #fbcfe8; 
+            margin: 0 10px; 
+            text-decoration: none; 
+            font-weight: 500; 
+            transition: color 0.2s;
+        }
+        .social-links a:hover { 
+            color: #ffffff; 
+            text-decoration: underline; 
+        }
+
+        /* Contenedor principal */
+        .container { 
+            max-width: 900px; 
+            margin: 2rem auto; 
+            padding: 0 1rem; 
+        }
+        
+        /* Tarjetas */
+        .card { 
+            background: var(--card-bg); 
+            border-radius: 12px; 
+            padding: 2rem; 
+            margin-bottom: 2rem; 
+            box-shadow: 0 4px 15px rgba(157, 23, 77, 0.05); 
+            border: 1px solid #fbcfe8;
+        }
+        h2 { 
+            color: var(--header-bg); 
+            margin-top: 0; 
+            border-bottom: 2px solid var(--border-color); 
+            padding-bottom: 0.5rem; 
+        }
+        h3 {
+            color: #1f2937;
+            margin-bottom: 0.4rem;
+        }
+        
+        /* Tags y Botones */
+        .tag { 
+            background: var(--tag-bg); 
+            color: var(--tag-text); 
+            padding: 0.25rem 0.65rem; 
+            border-radius: 6px; 
+            font-size: 0.8rem; 
+            font-weight: 600; 
+            display: inline-block; 
+        }
+        .tag-sec { 
+            background: #f3f4f6; 
+            color: #4b5563; 
+            padding: 0.25rem 0.65rem; 
+            border-radius: 6px; 
+            font-size: 0.8rem; 
+            font-weight: 600; 
+            display: inline-block; 
+        }
+        a.btn { 
+            display: inline-block; 
+            background: var(--primary); 
+            color: white; 
+            padding: 0.55rem 1.1rem; 
+            border-radius: 6px; 
+            text-decoration: none; 
+            font-weight: 500; 
+            font-size: 0.9rem; 
+            margin-top: 0.8rem; 
+            transition: background 0.2s, transform 0.1s;
+        }
+        a.btn:hover { 
+            background: var(--primary-hover); 
+            transform: translateY(-1px);
+        }
+        
+        .item { margin-bottom: 1.8rem; }
+        .item:last-child { margin-bottom: 0; }
+        .item-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            flex-wrap: wrap; 
+            gap: 0.5rem; 
+        }
+        .date { 
+            color: var(--text-muted); 
+            font-size: 0.85rem; 
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado Personal -->
+    <header>
+        <h1>Uma Fournier Cordero</h1>
+        <p class="subtitle">Estudiante de Matemáticas | Universidad Nacional Autónoma de México (UNAM)</p>
+        <div class="social-links">
+            <a href="https://github.com/umafournier" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/tuusuario" target="_blank">LinkedIn</a>
+            <a href="umafournierc@gmail.com">Contacto</a>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- Sobre mí -->
+        <section class="card">
+            <h2>Sobre mí</h2>
+            <p>¡Hola! Soy una estudiante apasionada por la tecnología, el aprendizaje continuo y la resolución de problemas complejos. Me encuentro explorando diversas áreas como el análisis de sistemas, desarrollo y ciencia de datos.</p>
+        </section>
+
+        <!-- Sección de Logros y Educación Continua -->
+<section class="card">
+    <h2>Reconocimientos & Formación</h2>
+
+    <!-- Subsección 1: Hackatón -->
+    <div class="sub-section">
+        <h3 class="sub-title">Competencias</h3>
+        <article class="item">
+            <h3>Geometric Intelligence Workshop by Instituto de Matemáticas UNAM and University of California Santa Barbara</h3>
+            <p>Hackatón centrado en el diagnóstico de ADHD; donde el equipo obtuvo el primer lugar al proponer una solución innovadora basada en el modelado de los datos en un espacio topológico y utilizando geometría hiperbólica para el cálculo de geodésicas. La propuesta integró conceptos de matemáticas puras, como estructuras topológicas y métricas no euclidianas, implementados mediante la biblioteca GeomStats.</p>
+        <div class="item-header">
+                <div>
+                    <span class="tag">1er Lugar</span>
+                    <span class="tag-sec">Hackatón</span>
+                </div>
+                <span class="date">2025</span>
+            </div>
+        </article>
+    </div>
+
+    <!-- Separador interno -->
+    <hr class="inner-divider">
+
+    <!-- Subsección 2: Diplomados y Certificaciones -->
+    <div class="sub-section">
+        <h3 class="sub-title">Diplomados y Certificaciones</h3>
+        
+        <article class="item">
+            <h3>Curso de Robótica Aplicada Nivel Uno</h3>
+            <p><strong>Emitido por:</strong> Asociacion de Robótica Aplicada y Ciencias de la Tecnología.</p>
+            <div class="item-header">
+                <div>
+                    <span class="tag">Curso</span>
+                </div>
+                <span class="date">2022</span>
+            </div>
+        </article>
+
+        <article class="item">
+            <h3>Programming for Everybody (Getting Started with Python)</h3>
+            <p><strong>Emitido por:</strong> University of Michigan (Coursera).</p>
+            <div class="item-header">
+                <div>
+                    <span class="tag">Curso</span>
+                </div>
+                <span class="date">2023</span>
+            </div>
+        </article>
+
+        <article class="item">
+            <h3>Pronósticos y Series de Tiempo</h3>
+            <p><strong>Emitido por:</strong> SciData.</p>
+            <div class="item-header">
+                <div>
+                    <span class="tag">Diplomado</span>
+                </div>
+                <span class="date">2026</span>
+            </div>
+        </article>
+
+        <article class="item">
+            <h3>Aplicaciones web con Shiny - R</h3>
+            <p><strong>Emitido por:</strong> Econometrics Data Lab.</p>
+            <div class="item-header">
+                <div>
+                    <span class="tag">Diplomado</span>
+                </div>
+                <span class="date">2026</span>
+            </div>
+        </article>
+
+        <article class="item">
+            <h3>Documentos dinámicos con RMarkdown y Quarto</h3>
+            <p><strong>Emitido por:</strong> Econometrics Data Lab.</p>
+            <div class="item-header">
+                <div>
+                    <span class="tag">Diplomado</span>
+                </div>
+                <span class="date">2026</span>
+            </div>
+        </article>
+
+        <article class="item">
+            <h3>BigData y Análisis de datos con PySpark</h3>
+            <p><strong>Emitido por:</strong> SciData.</p>
+            <div class="item-header">
+                <div>
+                    <span class="tag">Diplomado</span>
+                </div>
+                <span class="date">2026</span>
+            </div>
+        </article>
+    </div>
+</section>
+
+        <!-- Sección de Ensayos / Investigaciones Teóricas -->
+        <section class="card">
+            <h2>Ensayos y Lecturas</h2>
+            
+            <article class="item">
+                <div class="item-header">
+                    <div>
+                        <span class="tag">Sistemas Complejos</span>
+                        <span class="tag-sec">Ensayo 1</span>
+                    </div>
+                    <span class="date">Publicado recientemente</span>
+                </div>
+                <h3>Cuando el todo es más que sus partes</h3>
+                <p>Ensayo escrito a partir de la lectura de Melanie Mitchell, <i>Completixy: A Guided Tour, Chap 1: What is Complexity?</i> </p>
+                <a href="ensayos/cuandoeltodoesmas.pdf" class="btn">Leer Ensayo (PDF)</a>
+            </article>
+
+        </section>
+
+        <!-- Sección de Otros Proyectos / Código -->
+        <section class="card">
+            <h2>Proyectos & Código</h2>
+            
+            <article class="item">
+                <div class="item-header">
+                    <div>
+                        <span class="tag">Proyecto Personal</span>
+                        <span class="tag-sec">Python</span>
+                    </div>
+                </div>
+                <h3>Nombre de un Proyecto o Tarea Práctica</h3>
+                <p>Descripción.</p>
+                <a href="#" class="btn">Ver Repositorio / Demo</a>
+            </article>
+        </section>
+
+
+    </div>
+
+    
+
+</body>
+</html>

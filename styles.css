@@ -1,0 +1,14 @@
+.sub-title {
+    color: var(--header-bg);
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.inner-divider {
+    border: 0;
+    border-top: 1px dashed var(--border-color);
+    margin: 1.5rem 0;
+}

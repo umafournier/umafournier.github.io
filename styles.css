@@ -13,6 +13,21 @@
     margin: 1.5rem 0;
 }
 
-a {
-    color: #db2777;
+/* 1. Previene que las imágenes desborden la pantalla */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 2. Permite que el código tenga scroll horizontal en pantallas pequeñas */
+pre, code, .highlight {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: pre-wrap; /* Opcional: ajusta las líneas largas automáticamente */
+}
+
+/* 3. Asegura que el contenedor principal o la tarjeta respondan al ancho móvil */
+.project-container, .card {
+    max-width: 100%;
+    box-sizing: border-box;
 }

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorando la dinámica del mapeo logístico | Uma Fournier</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #db2777;
+            --primary-hover: #be185d;
+            --bg: #fdf2f8;
+            --card-bg: #ffffff;
+            --header-bg: #831843;
+            --text: #374151;
+            --text-muted: #9d174d;
+            --border-color: #fbcfe8;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        /* Navegación para regresar al portafolio */
+        nav {
+            background: var(--header-bg);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a.back-btn {
+            color: #fbcfe8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        nav a.back-btn:hover {
+            color: #ffffff;
+        }
+
+        /* Contenedor principal */
+        .project-container {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2.5rem;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(157, 23, 77, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .project-header {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            background: #fce7f3;
+            color: var(--text-muted);
+            padding: 0.25rem 0.65rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 0.8rem;
+        }
+
+        h1 {
+            color: var(--header-bg);
+            margin: 0 0 0.5rem 0;
+            font-size: 2.1rem;
+            line-height: 1.3;
+        }
+
+        .meta-info {
+            color: #6b7280;
+            font-size: 0.85rem;
+        }
+
+        /* Estilos para el contenido intercalado */
+        .project-content p {
+            margin-bottom: 1.4rem;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .project-content h2 {
+            color: var(--header-bg);
+            margin-top: 2rem;
+            font-size: 1.4rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.3rem;
+        }
+
+        /* Estilo para imágenes descriptivas */
+        .figure-box {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .figure-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .figure-caption {
+            font-size: 0.88rem;
+            color: #6b7280;
+            margin-top: 0.6rem;
+            font-style: italic;
+        }
+
+        /* Footer */
+        .project-footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .btn-return {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .btn-return:hover {
+            background: var(--primary-hover);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación superior -->
+    <nav>
+        <a href="../index.html" class="back-btn">← Volver al Inicio</a>
+    </nav>
+
+    <main class="project-container">
+        
+        <header class="project-header">
+            <span class="tag">Sistemas Complejos</span>
+            <h1>Explorando la dinámica del mapeo logístico</h1>
+            <div class="meta-info">
+                Desarrollado por <strong>Uma Fournier Cordero</strong> | 2026
+            </div>
+        </header>
+
+        <article class="project-content">
+            <p>
+                Para estudiar el comportamiento del mapeo logístico utilizamos tres representaciones: la serie temporal, el diagrama cobweb y el diagrama de bifurcaciones. Aunque las tres describen el mismo sistema, cada una permite observar diferentes aspectos de su dinámica.
+
+            </p>
+            
+            <img src="mp1.png" alt="Función del mapeo logístico">
+            
+            <h2>Serie temporal</h2>
+            <p>
+                La serie temporal muestra cómo cambia (x_n) conforme aumenta el número de iteraciones (n), manteniendo fijo el valor de (a). Esta representación resulta especialmente útil para observar si la órbita converge a un punto fijo o si comienza a repetirse de manera periódica.
+            </p>
+
+            <img src="ST1.png" alt="Serie temporal 1">
+            <img src="ST2.png" alt="Serie temporal 2">
+            <img src="ST3.png" alt="Serie temporal 3">
+            <img src="ST4.png" alt="Serie temporal 4">
+
+            <p>En las gráficas podemos observar que el comportamiento de la órbita depende del valor de \(a\). Para valores en los que existe un punto fijo estable, los valores de \(x_n\) se acercan progresivamente a un mismo valor. Cuando aparece una órbita periódica, los valores de \(x_n\) comienzan a repetirse después de cierto número de iteraciones. En el caso caótico, la serie temporal no muestra una repetición periódica evidente y presenta un comportamiento irregular.
+</p>
+
+            <h2>Diagrama Cobweb</h2>
+
+            <img src="cw0.png" alt="Funcion para hacer el diagrama de cobweb.">
+            <p>
+El diagrama cobweb permite visualizar cómo se construye la órbita a partir de la función
+
+$$
+f(x)=ax(1-x).
+$$
+
+Partiendo de la condición inicial \(x_0\), seguimos sucesivamente los valores de la órbita mediante movimientos verticales hacia la curva \(f(x)\) y horizontales hacia la recta \(y=x\).
+            </p>
+
+            <img src="cw1.png" alt="Diagrama de cobweb 1">
+            <img src="cw2.png" alt="Diagrama de cobweb 2">
+            <img src="cw3.png" alt="Diagrama de cobweb 3">
+            <img src="cw4.png" alt="Diagrama de cobweb 4">
+
+            <p>En el Cobweb podemos observar hacia qué comportamiento tiende la órbita. Cuando los movimientos se acercan a un único punto, se identifica la convergencia hacia un punto fijo. Cuando los movimientos forman un ciclo entre varios valores, podemos reconocer una órbita periódica. Esta representación permite visualizar de manera intuitiva la dinámica de una órbita, aunque la serie temporal puede ser más clara para determinar exactamente su periodo.
+</p>
+
+        <h2>Diagrama de Bifurcaciones</h2>
+
+        <img src="bf0.png" alt="Diagrama de bifurcaciones">
+
+        <p>A diferencia de las representaciones anteriores, el diagrama de bifurcaciones no estudia solamente un valor de \(a\). En este caso variamos el parámetro desde \(a=2.5\) hasta \(a=4\) y observamos los valores que toma \(x_n\) después de eliminar el comportamiento transitorio.</p>
+        
+        <img src="bf1.png" alt="Diagrama de bifurcaciones">
+
+        <p>En el diagrama podemos distinguir diferentes regiones.
+        Para ciertos valores de <strong>a</strong>, la órbita converge
+        a un único punto estable. Al aumentar el parámetro, este
+        comportamiento cambia y aparecen órbitas periódicas de
+        periodo 2, después de periodo 4 y de periodos cada vez
+        mayores.
+    </p>
+
+        <p>Un aspecto interesante del diagrama aparece alrededor de \(a\approx3.83\). Aunque nos encontramos dentro de la región donde predomina el comportamiento caótico, aparece nuevamente una región ordenada que corresponde a una órbita periódica.
+
+    Esta región se conoce como una ventana periódica. En ella el sistema vuelve a presentar un comportamiento periódico antes de regresar al caos conforme aumenta \(a\).
+
+    Esto muestra que no es correcto pensar que el sistema se vuelve simplemente "cada vez más caótico" al aumentar el parámetro. La dinámica puede alternar entre regiones caóticas y periódicas.
+    </p>
+
+        <img src="bf2.png" alt="Serie temporal para a=3.83.">
+        <h2>Comparación</h2>
+
+        <p>Cada representación aporta información diferente. La serie temporal permite observar directamente la evolución de una órbita y reconocer si sus valores convergen o se repiten. El cobweb permite visualizar cómo se construye esa órbita y hacia dónde tiende. Finalmente, el diagrama de bifurcaciones permite observar cómo cambia el comportamiento del sistema al modificar \(a\).</p>
+        
+        <p>Por lo tanto, para identificar un punto fijo o estudiar una órbita particular, la serie temporal y el cobweb resultan especialmente útiles. Para determinar el periodo, la serie temporal permite contar directamente los valores que se repiten. En cambio, para estudiar cómo cambia la dinámica al variar \(a\), el diagrama de bifurcaciones proporciona una visión mucho más clara y general.</p>
+
+        </article>
+
+
+        <footer class="project-footer">
+            <a href="proyecto1-2.html" class="btn-return">Mandelbrot y el mapeo logistico --></a>
+        </footer>
+
+        <footer class="project-footer">
+            <a href="../index.html" class="btn-return"><-- Regresar a la página principal</a>
+        </footer>
+
+    </main>
+
+</body>
+</html>

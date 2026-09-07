@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandelbrot y el mapeo Logístico | Uma Fournier</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #db2777;
+            --primary-hover: #be185d;
+            --bg: #fdf2f8;
+            --card-bg: #ffffff;
+            --header-bg: #831843;
+            --text: #374151;
+            --text-muted: #9d174d;
+            --border-color: #fbcfe8;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        /* Navegación para regresar al portafolio */
+        nav {
+            background: var(--header-bg);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a.back-btn {
+            color: #fbcfe8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        nav a.back-btn:hover {
+            color: #ffffff;
+        }
+
+        /* Contenedor principal */
+        .project-container {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2.5rem;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(157, 23, 77, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .project-header {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            background: #fce7f3;
+            color: var(--text-muted);
+            padding: 0.25rem 0.65rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 0.8rem;
+        }
+
+        h1 {
+            color: var(--header-bg);
+            margin: 0 0 0.5rem 0;
+            font-size: 2.1rem;
+            line-height: 1.3;
+        }
+
+        .meta-info {
+            color: #6b7280;
+            font-size: 0.85rem;
+        }
+
+        /* Estilos para el contenido intercalado */
+        .project-content p {
+            margin-bottom: 1.4rem;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .project-content h2 {
+            color: var(--header-bg);
+            margin-top: 2rem;
+            font-size: 1.4rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.3rem;
+        }
+
+        /* Estilo para imágenes descriptivas */
+        .figure-box {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .figure-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .figure-caption {
+            font-size: 0.88rem;
+            color: #6b7280;
+            margin-top: 0.6rem;
+            font-style: italic;
+        }
+
+        /* Footer */
+        .project-footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .btn-return {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .btn-return:hover {
+            background: var(--primary-hover);
+        }
+
+        a {
+    color: #db2777;
+}
+    </style>
+</head>
+<body>
+
+    <!-- Navegación superior -->
+    <nav>
+        <a href="../index.html" class="back-btn">← Volver al Inicio</a>
+    </nav>
+
+    <main class="project-container">
+        
+        <header class="project-header">
+            <span class="tag">Sistemas Complejos</span>
+            <h1>Mandelbrot y el mapeo Logístico</h1>
+            <div class="meta-info">
+                Desarrollado por <strong>Uma Fournier Cordero</strong> | 2026
+            </div>
+        </header>
+
+        <article class="project-content">
+
+            <p>Consideremos la familia cuadratica $$z_{n+1}=z_n^2+c$$ donde \(z\) y \(c\) son números complejos. Para construir el conjunto comenzamos cada órbita con \(z_0=0\) y repetimos la iteración. Para cada valor de \(c\), observamos si la órbita permanece acotada o si escapa. Utilizamos el criterio de escape \(|z_n|>2\). Además, registramos el número de iteraciones que necesita cada punto para escapar y utilizamos esta información para construir la imagen. De esta manera podemos visualizar qué valores de \(c\) producen órbitas acotadas y cuáles producen órbitas que escapan.</p>
+    
+            <img src="mb2.png" alt="Region del plano complejo">
+            <img src="mb3.png" alt="Inicializacion">
+            <img src="mb4.png" alt="Dibujar el conjunto de Mandelbrot">
+            <img src="mb5.png" alt="Conjunto de Mandelbrot">
+
+             <p>
+            Cada punto de la imagen representa un valor diferente
+            de <strong>c</strong> en el plano complejo. La estructura
+            que aparece es el resultado de estudiar el comportamiento
+            de la órbita asociada a cada uno de estos valores.</p>
+
+        <p>Para comparar el conjunto de Mandelbrot con el mapeo logístico,
+        nos interesa particularmente lo que ocurre cuando \(c\) es real.
+        En este caso la iteración se convierte en $$z_{n+1}=z_n^2+c, \qquad z_0=0$$</p>
+
+        <img src="mb6.png" alt="Eje real de Mandelbrot">
+        <img src="mb7.png" alt="Codigo Mandelbrot">
+
+        <p>Al estudiar las órbitas para distintos valores reales de \(c\),
+        obtenemos una estructura muy similar a la observada en el
+        diagrama de bifurcación del mapeo logístico.</p>
+        
+        <img src="mb8.png" alt="Dinámica de $z_{n+1}=z_n^2+c$ sobre el eje real">
+
+        <h2>Conexión matemática entre Mandelbrot y el mapeo logístico</h2>
+
+        <p>
+        La semejanza entre las dos gráficas no es una coincidencia.
+        Existe una transformación que relaciona directamente el
+        mapeo logístico con la familia cuadrática.</p>
+
+        <p>
+        Partimos del mapeo logístico $$x_{n+1}=a x_n(1-x_n)$$
+        y hacemos el cambio de variable $$z_n=a\left(\frac{1}{2}-x_n\right).$$
+    </p>
+
+    <p>
+        Además, si queremos que \(z_0=0\), basta tomar \(x_0=\frac12\),
+        que es precisamente la condición inicial que utilizamos en
+        nuestras simulaciones.
+    </p>
+
+    <p>
+        Sustituyendo este cambio de variable en el mapeo logístico,
+        se obtiene $$z_{n+1}=z_n^2+c$$
+    </p>
+
+    <p>
+        donde el parámetro \(c\) está relacionado con \(a\) mediante
+    </p>
+
+    <div class="formula">
+        \[
+        c=\frac{a(2-a)}{4}.
+        \]
+    </div>
+
+    <p>
+        Por lo tanto, las dos familias dinámicas están relacionadas
+        matemáticamente. Esto explica por qué aparecen estructuras
+        semejantes en sus diagramas: los puntos fijos, las órbitas
+        periódicas, las duplicaciones de periodo y las regiones
+        caóticas aparecen en ambas representaciones.
+    </p>
+
+    <p>
+        En particular, para los valores de \(a\) que estudiamos,
+        al aumentar \(a\) el valor correspondiente de \(c\) disminuye.
+        Por ejemplo,
+    </p>
+
+    <div class="formula">
+        \[
+        a=2 \Rightarrow c=0,\qquad
+        a=3 \Rightarrow c=-\frac14,\qquad
+        a=4 \Rightarrow c=-2.
+        \]
+    </div>
+
+    <p>
+        Por esta razón, al comparar directamente las gráficas,
+        una de ellas puede aparecer invertida horizontalmente.
+        Además, como
+        \(z_n=a\left(\frac12-x_n\right)\),
+        la coordenada vertical también cambia de orientación.
+        La apariencia reflejada de los diagramas es, por tanto,
+        consecuencia de la transformación matemática.
+    </p>
+
+    <p>
+        Esta relación muestra que el comportamiento que observamos
+        en el mapeo logístico forma parte de una estructura más amplia
+        dentro del estudio de sistemas dinámicos. Dos ecuaciones que
+        inicialmente parecen diferentes pueden describir esencialmente
+        la misma dinámica después de realizar un cambio de variables.
+    </p>
+
+        </article>
+
+        <footer class="project-footer">
+            <a href="proyecto1.html" class="btn-return"><-- Explorando la dinámica del mapeo logístico</a>
+        </footer>
+        
+        <footer class="project-footer">
+            <a href="../index.html" class="btn-return">Regresar a la página principal</a>
+        </footer>
+
+    </main>
+
+</body>
+</html>

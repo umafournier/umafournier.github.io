@@ -13,21 +13,28 @@
     margin: 1.5rem 0;
 }
 
-/* 1. Previene que las imágenes desborden la pantalla */
-img {
-    max-width: 100%;
-    height: auto;
+/* Corrección de desborde móvil */
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
-/* 2. Permite que el código tenga scroll horizontal en pantallas pequeñas */
-pre, code, .highlight {
-    max-width: 100%;
-    overflow-x: auto;
-    white-space: pre-wrap; /* Opcional: ajusta las líneas largas automáticamente */
-}
-
-/* 3. Asegura que el contenedor principal o la tarjeta respondan al ancho móvil */
-.project-container, .card {
-    max-width: 100%;
+.project-container, .card, article {
+    max-width: 100% !important;
     box-sizing: border-box;
+}
+
+/* Fuerza a las imágenes a no salir del contenedor */
+img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+}
+
+/* Bloques de código ajustables en móvil */
+pre, code {
+    max-width: 100% !important;
+    white-space: pre-wrap !important; /* Ajusta el código al ancho de pantalla */
+    word-break: break-word !important;
+    overflow-x: auto !important;
 }

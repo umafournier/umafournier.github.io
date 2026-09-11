@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometría Fractal y Visualización: Tarea I | Uma Fournier</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+    <!-- Navegación superior -->
+    <nav>
+        <a href="../index.html" class="back-btn">← Volver al Inicio</a>
+    </nav>
+
+    <main class="project-container">
+        
+        <header class="project-header">
+            <span class="tag">Geometría Fractal</span>
+            <h1>Geometría Fractal y Visualización: Tarea I</h1>
+            <div class="meta-info">
+                Desarrollado por <strong>Uma Fournier Cordero</strong> | 2026
+            </div>
+        </header>
+
+        <article class="project-content">
+
+        <h2>Prueba de primalidad por división de prueba optimizada</h2>
+
+        <p>Una forma directa de verificar si un número entero \(N\)< es primo, consiste en evaluar si tiene divisores
+            en el intervalo \([2, \sqrt{N}]\). Sin embargo, evaluar todos los candidatos genera redundancia: si un numero
+            no es divisible entre 2, tampoco lo será entre nignún otro número par.
+        </p>
+
+        <p>
+            Al manejar el 2 como un caso especial, podemos restringir el bucle de busqueda exclusivamente a candidatos impares.
+            Esta estrategia reduce a la mitad el espacio de busqueda en el bucle principal, mejorando la eficiencia del algoritmo sin perder rigor técnico.
+        </p>
+
+        <img src="img/fract1.png" alt="Algoritmo números primos.">
+
+        <h2>Metodo Newton-Raphson</h2>
+
+        <p>
+            El método Newton-Raphson es un algoritmo iterativo fundamental en el análisis numérico para la busqueda de raíces 
+            de funciones diferenciables. Partiendo de una estimación inicial \(x_0\), la idea geométrica consiste en sustituir la función
+            por su recta tangente en dicho punto y calcular la intersección con el eje horizontal para obtener una mejor aproximación \(x_{n+1}\).
+            Algorítmicamente, se iteran las estimaciones mediante la relación $$x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$$ finalizando el proceso
+            cuando la magnitud del residuo \(|f(x_n)|\) es menor que una tolerancia \(\delta\) establecidad, o bien interrumpiendo la ejecución
+            si la derivada es cercana a cero o si se supera un número máximo de iteraciones.
+        </p>
+
+        <img src="img/fract2.png" alt="Función Newton-Raphson">
+
+        <h2> Ejemplo de uso:</h2>
+
+        <img src="img/fract3.png" alt="Ejemplo Newton-Raphson">
+        
+        <h2>Permutacion ciclica de canales de color RGB</h2>
+
+        <p>
+            El procesamiento de imágenes matriciales permite alterar la apariencia visual de una fotografía modificando la combinación de sus canales cromáticos punto a punto. Al acceder individualmente a las componentes de cada píxel, es posible aplicar transformaciones algebraicas sobre el espacio de color.
+        </p>
+
+        <img src="img/fract4.png" alt="Función permutación RGB">
+        <p>
+            Esta función en Julia recorre la matriz de píxeles y realiza una permutación cíclica de los canales, reasignando las intensidades según el mapeo \((R, G, B) \mapsto (G, B, R)\). Para evitar mutar la imagen original de forma destructiva, se asigna espacio en memoria mediante \(similar(img)\) y se construye un nuevo arreglo con la transformación cromática aplicada.
+        </p>
+
+        <img src="img/fract5.png" alt="Gato original">
+        <img src="img/fract6.png" alt="Gato permutado">
+
+        <h2>Dibujo de primitivas geométricas y recortes en matrices de pixeles</h2>
+    
+        <p>El renderizado de formas geométricas sobre imágenes matriciales involucra la manipulación directa de índices bidimensionales y la gestión explícita de bordes. Para rectángulos alineados con los ejes coordenados, la delimitación de la región de interés se reduce a encontrar los valores mínimos y máximos de las coordenadas de sus vértices.</p>
+
+        <img src="img/fract7.png" alt="Funcion frontera">
+        <img src="img/fract8.png" alt="Funcion relleno">
+    
+        <p>Estas funciones en Julia permiten trazar tanto la frontera como la superficie rellena de un rectángulo sobre una imagen existente. Para garantizar la solidez del algoritmo ante entradas externas, se aplica un proceso de recorte (clipping) mediante la intersección de los intervalos \([x_{\min}, x_{\max}]\) y \([y_{\min}, y_{\max}]\) con las dimensiones reales de la imagen, evitando accesos fuera de rango en la matriz.</p>
+
+        <img src="img/fract9.png" alt="Lienzo">
+        <img src="img/fract10.png" alt="Frontera">
+        <img src="img/fract11.png" alt="Relleno">
+    </article>
+
+
+        <footer class="project-footer">
+            <a href="../index.html" class="btn-return"><-- Regresar a la página principal</a>
+        </footer>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autómata celular bidimensional: Juego de la Vida</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+    <!-- Navegación superior -->
+    <nav>
+        <a href="../index.html" class="back-btn">← Volver al Inicio</a>
+    </nav>
+
+    <main class="project-container">
+        
+        <header class="project-header">
+            <span class="tag">Sistemas Complejos</span>
+            <h1>Autómata celular bidimensional: Juego de la Vida</h1>
+            <div class="meta-info">
+                Desarrollado por <strong>Uma Fournier Cordero</strong> | 2026
+            </div>
+        </header>
+
+        <article class="project-content">
+
+<p>
+Como extensión de los autómatas celulares unidimensionales, se implementó el <strong>Juego de la Vida de Conway</strong>, un autómata celular bidimensional en el que cada célula puede encontrarse en uno de dos estados: viva o muerta. El estado completo del sistema se representa mediante una matriz binaria, donde el valor \(1\) representa una célula viva y el valor \(0\) una célula muerta.
+</p>
+
+<p>
+En este caso se utilizó una cuadrícula de tamaño \(50\times50\). Por lo tanto, una configuración del sistema pertenece al espacio \(\{0,1\}^{50\times50}\).
+A diferencia del autómata unidimensional estudiado anteriormente, donde cada célula tenía una vecindad de dos elementos, en el Juego de la Vida cada célula interactúa con las ocho células que la rodean. Para cada célula se cuentan sus vecinos vivos y, a partir de este número, se determina su estado en la siguiente generación.
+</p>
+
+<p>
+Las reglas de evolución son las siguientes. Una célula viva permanece viva si tiene exactamente dos o tres vecinos vivos; en cualquier otro caso muere. Por otro lado, una célula muerta se convierte en viva si tiene exactamente tres vecinos vivos. Estas reglas se aplican simultáneamente a todas las células de la cuadrícula.
+</p>
+
+<p>
+En la implementación se utiliza una matriz nueva para almacenar cada generación. Esto es importante porque todas las células deben actualizarse utilizando únicamente la configuración correspondiente al tiempo anterior. Si se modificara directamente la matriz original mientras se recorren las células, los resultados de las primeras actualizaciones afectarían a las células que todavía no han sido evaluadas.
+</p>
+
+<p>
+Para observar una dinámica más poblada se utilizó una condición inicial aleatoria, donde aproximadamente el 35% de las células se encuentran inicialmente vivas. La evolución se almacenó durante 100 generaciones y posteriormente se visualizaron diferentes instantes del sistema. De esta manera es posible observar cómo una configuración inicialmente desordenada cambia con el tiempo y genera diferentes patrones locales.
+</p>
+
+<img src="img/jue.png">
+<img src="img/jue1.png">
+<img src="img/jue2.png">
+<img src="img/jue3.png">
+<img src="img/jue4.png">
+<p>
+Las imágenes muestran que, aunque las reglas son locales y relativamente sencillas, la evolución global puede producir estructuras más complejas. Algunas configuraciones pueden desaparecer progresivamente, otras pueden permanecer estables y también pueden aparecer patrones que se repiten o que se desplazan por la cuadrícula. Esto muestra cómo reglas locales deterministas pueden producir comportamientos dinámicos no triviales a nivel global.
+</p>
+
+<p>
+Al igual que en el caso unidimensional, la evolución puede describirse mediante una función de transición
+\[
+\Phi:\{0,1\}^{50\times50}\longrightarrow\{0,1\}^{50\times50},
+\]
+donde cada configuración determina de manera única la configuración correspondiente a la siguiente generación. La principal diferencia es que ahora el espacio de estados tiene una dimensión espacial adicional y la regla de actualización depende de una vecindad bidimensional.
+</p>
+
+        </article>
+
+        <footer class="project-footer">
+            <a href="proyecto6.html" class="btn-return"><-- Autómata celular unidimensional</a>
+        </footer>
+
+        <footer class="project-footer">
+            <a href="../index.html" class="btn-return">Regresar a la página principal</a>
+        </footer>
+
+    </main>
+
+</body>
+</html>

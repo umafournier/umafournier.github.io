@@ -170,3 +170,44 @@ pre, code {
     word-break: break-word !important;
     overflow-x: auto !important;
 }
+
+/* Tabla de configuraciones */
+.project-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.project-content thead {
+    background: var(--header-bg);
+    color: white;
+}
+
+.project-content th {
+    padding: 14px 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.project-content td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text);
+}
+
+.project-content tbody tr:nth-child(even) {
+    background: var(--bg);
+}
+
+.project-content tbody tr:hover {
+    background: #fce7f3;
+}
+
+.project-content tbody tr:last-child td {
+    border-bottom: none;
+}
